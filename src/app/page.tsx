@@ -1,8 +1,11 @@
+"use client";
 import Image from "next/image";
-import { ShieldCheck, Activity, Truck } from "lucide-react";
+import { ShieldCheck, Activity, Truck, Menu, X } from "lucide-react";
+import { useState } from "react";
 import { MessageCircle } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const productPartners = [
   {
     company: "bioMérieux",
@@ -99,13 +102,47 @@ export default function Home() {
 
 </div>
 
-    <div className="hidden md:flex gap-10 text-gray-700 font-medium text-lg">
-      <a href="#about">About</a>
-<a href="#partners">Partners</a>
-<a href="#brochure">Brochure</a>
-<a href="#contact">Contact</a>
+    <>
+  {/* Desktop Menu */}
+  <div className="hidden md:flex gap-10 text-gray-700 font-medium text-lg">
+    <a href="#about">About</a>
+    <a href="#partners">Partners</a>
+    <a href="#brochure">Brochure</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  {/* Mobile Menu Button */}
+  <button
+    onClick={() => setMenuOpen(!menuOpen)}
+    className="md:hidden absolute right-4 top-4"
+  >
+    {menuOpen ? <X size={28} /> : <Menu size={28} />}
+  </button>
+</>
+  </div>
+  {menuOpen && (
+  <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
+    <div className="flex flex-col items-center py-4 gap-4 text-gray-700 font-medium">
+
+      <a href="#about" onClick={() => setMenuOpen(false)}>
+        About
+      </a>
+
+      <a href="#partners" onClick={() => setMenuOpen(false)}>
+        Partners
+      </a>
+
+      <a href="#brochure" onClick={() => setMenuOpen(false)}>
+        Brochure
+      </a>
+
+      <a href="#contact" onClick={() => setMenuOpen(false)}>
+        Contact
+      </a>
+
     </div>
   </div>
+)}
 </nav>
       <section className="relative flex min-h-[80vh] items-center justify-center px-6 pt-44 md:pt-24 overflow-hidden">
         <div className="absolute inset-0 -z-10">
