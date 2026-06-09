@@ -77,29 +77,27 @@ export default function Home() {
     <div className="flex items-center gap-4">
 
   <Image
-    src="/logo.jpeg"
-    alt="SSV Healthcare Logo"
-    width={120}
-    height={120}
-    className="h-16 w-auto"
-    priority
-  />
+  src="/logo.jpeg"
+  width={100}
+  height={100}
+  className="h-10 md:h-16 w-auto"
+/>
 
   <div className="h-10 w-px bg-gray-300"></div>
 
   <div>
-    <h2 className="text-3xl font-extrabold text-gray-800 tracking-tight">
+    <h2 className="text-xl md:text-3xl font-extrabold text-gray-800 tracking-tight">
   SSV Healthcare
 </h2>
 
-    <p className="text-base text-green-600 font-medium">
+    <p className="hidden md:block text-base text-green-600 font-medium">
       Delivering Advanced Healthcare Solutions
     </p>
   </div>
 
 </div>
 
-    <div className="flex gap-10 text-gray-700 font-medium text-lg">
+    <div className="hidden md:flex gap-10 text-gray-700 font-medium text-lg">
       <a href="#about">About</a>
 <a href="#partners">Partners</a>
 <a href="#brochure">Brochure</a>
@@ -242,7 +240,7 @@ export default function Home() {
 
       <div className="bg-white rounded-3xl shadow-lg p-8 text-center border border-gray-100">
         <div className="text-5xl font-bold text-[#009933]">
-          7+
+        
         </div>
         <p className="text-gray-600 mt-2">
           Global Partners
