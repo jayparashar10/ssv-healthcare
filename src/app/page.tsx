@@ -76,22 +76,22 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-sm z-50">
-  <div className="max-w-7xl mx-auto px-4 py-2 md:py-3 flex flex-col md:flex-row justify-between items-center">
-    <div className="flex flex-col md:flex-row items-center gap-3">
+  <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <div className="flex items-center gap-3">
 
   <Image
   src="/logo.jpeg"
   alt="SSV Healthcare Logo"
-  width={100}
-  height={100}
-  className="h-10 md:h-16 w-auto"
+  width={60}
+  height={60}
+  className="h-12 w-auto"
   priority
 />
 
   <div className="hidden md:block h-10 w-px bg-gray-300"></div>
 
-  <div className="text-center md:text-left">
-    <h2 className="text-xl md:text-3xl font-extrabold text-gray-600 tracking-tight">
+  <div>
+    <h2 className="text-lg md:text-3xl font-extrabold text-gray-500 tracking-tight">
   SSV Healthcare
 </h2>
 
@@ -125,7 +125,7 @@ export default function Home() {
 </>
   </div>
   {menuOpen && (
-  <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
+  <div className="md:hidden bg-white border-t border-gray-700 shadow-lg">
     <div className="flex flex-col items-center py-4 gap-4 text-gray-700 font-medium">
 
       <a href="#about" onClick={() => setMenuOpen(false)}>
