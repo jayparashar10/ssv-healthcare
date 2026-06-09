@@ -107,7 +107,7 @@ export default function Home() {
     </div>
   </div>
 </nav>
-      <section className="relative flex min-h-[80vh] items-center justify-center px-6 pt-24 overflow-hidden">
+      <section className="relative flex min-h-[80vh] items-center justify-center px-6 pt-44 md:pt-24 overflow-hidden">
         <div className="absolute inset-0 -z-10">
   <div className="absolute top-20 left-20 h-72 w-72 rounded-full bg-blue-300 opacity-30 blur-3xl"></div>
   <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-cyan-300 opacity-30 blur-3xl"></div>
@@ -117,7 +117,7 @@ export default function Home() {
             SSV Healthcare
           </p>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-800 leading-tight">
+          <h1 className="text-4xl md:text-7xl font-bold text-gray-800 leading-tight">
             Delivering Advanced
             <span className="text-green-600"> Healthcare Solutions</span>
           </h1>
