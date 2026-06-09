@@ -73,7 +73,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-sm z-50">
-  <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center">
+  <div className="max-w-7xl mx-auto px-4 py-2 md:py-3 flex flex-col md:flex-row justify-between items-center">
     <div className="flex flex-col md:flex-row items-center gap-3">
 
   <Image
@@ -113,21 +113,21 @@ export default function Home() {
   <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-cyan-300 opacity-30 blur-3xl"></div>
 </div>
         <div className="max-w-6xl text-center">
-          <p className="inline-block px-6 py-2 rounded-full border border-green-200 bg-green-50 text-[#009933] font-semibold tracking-wider uppercase mb-6">
+          <p className="hidden md:inline-block px-6 py-2 rounded-full border border-green-200 bg-green-50 text-[#009933] font-semibold tracking-wider uppercase mb-6">
             SSV Healthcare
           </p>
 
-          <h1 className="text-4xl md:text-7xl font-bold text-gray-800 leading-tight">
+          <h1 className="text-3xl md:text-7xl font-bold text-gray-800 leading-tight">
             Delivering Advanced
             <span className="text-green-600"> Healthcare Solutions</span>
           </h1>
 
-          <p className="mt-8 text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="mt-6 text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
             Trusted distributor of high-quality medical equipment, helping
             hospitals, clinics, and healthcare professionals access innovative
             healthcare technologies.
           </p>
-<div className="mt-16 flex flex-wrap justify-center gap-10">
+<div className="mt-10 flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10">
 
   <div className="flex items-center gap-3 text-gray-700">
     <Truck className="h-6 w-6 text-[#009933]" />
