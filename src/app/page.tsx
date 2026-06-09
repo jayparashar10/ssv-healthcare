@@ -73,19 +73,21 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-sm z-50">
-  <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-    <div className="flex items-center gap-4">
+  <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center">
+    <div className="flex flex-col md:flex-row items-center gap-3">
 
   <Image
   src="/logo.jpeg"
+  alt="SSV Healthcare Logo"
   width={100}
   height={100}
   className="h-10 md:h-16 w-auto"
+  priority
 />
 
-  <div className="h-10 w-px bg-gray-300"></div>
+  <div className="hidden md:block h-10 w-px bg-gray-300"></div>
 
-  <div>
+  <div className="text-center md:text-left">
     <h2 className="text-xl md:text-3xl font-extrabold text-gray-800 tracking-tight">
   SSV Healthcare
 </h2>
