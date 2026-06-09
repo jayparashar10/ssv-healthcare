@@ -91,7 +91,7 @@ export default function Home() {
   <div className="hidden md:block h-10 w-px bg-gray-300"></div>
 
   <div className="text-center md:text-left">
-    <h2 className="text-xl md:text-3xl font-extrabold text-gray-800 tracking-tight">
+    <h2 className="text-xl md:text-3xl font-extrabold text-gray-600 tracking-tight">
   SSV Healthcare
 </h2>
 
@@ -113,11 +113,15 @@ export default function Home() {
 
   {/* Mobile Menu Button */}
   <button
-    onClick={() => setMenuOpen(!menuOpen)}
-    className="md:hidden absolute right-4 top-4"
-  >
-    {menuOpen ? <X size={28} /> : <Menu size={28} />}
-  </button>
+  onClick={() => setMenuOpen(!menuOpen)}
+  className="md:hidden absolute right-4 top-4 text-[#009933]"
+>
+  {menuOpen ? (
+    <X size={32} className="text-[#009933]" />
+  ) : (
+    <Menu size={32} className="text-[#009933]" />
+  )}
+</button>
 </>
   </div>
   {menuOpen && (
