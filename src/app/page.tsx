@@ -124,7 +124,7 @@ const handleBrochureRequest = async () => {
     company: "Bio-Rad",
     products: [
       { name: "D-10", file: "biorad-d10.pdf" },
-      { name: "RX50V", file: "biorad-rx50v.pdf" },
+      { name: "RX50V"},
     ],
   },
 
@@ -586,15 +586,21 @@ const handleBrochureRequest = async () => {
               {product.name}
             </h4>
 
-            <button
-  onClick={() => {
-    setSelectedBrochure(`/brochures/${product.file}`);
-    setShowForm(true);
-  }}
-  className="inline-flex mt-4 text-[#009933] font-semibold cursor-pointer"
->
-  View Brochure →
-</button>
+            {product.file ? (
+  <button
+    onClick={() => {
+      setSelectedBrochure(`/brochures/${product.file}`);
+      setShowForm(true);
+    }}
+    className="inline-flex mt-4 text-[#009933] font-semibold cursor-pointer hover:underline"
+  >
+    View Brochure →
+  </button>
+) : (
+  <span className="inline-flex mt-4 text-gray-400 font-semibold">
+    Brochure Coming Soon
+  </span>
+)}
           </div>
         ))}
       </div>
