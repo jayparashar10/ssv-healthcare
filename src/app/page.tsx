@@ -30,11 +30,31 @@ export default function Home() {
   {
     company: "Nihon Kohden",
     products: [
-      {
-        name: "Celltac MEK 1301/1302",
-        file: "nihonkohden-celltac-mek1301-1302.pdf",
-      },
-    ],
+  {
+    name: "Celltac MEK 1301/1302",
+    file: "nihonkohden-celltac-mek1301-1302.pdf",
+  },
+  {
+    name: "Celltac α+ MEK-1305",
+    file: "MEK_1305.pdf",
+  },
+  {
+    name: "Celltac G+ MEK-9200",
+    file: "MEK-9200.pdf",
+  },
+  {
+    name: "Celltac Veterinary MEK-6550JK",
+    file: "MEK-6550JK.pdf",
+  },
+  {
+    name: "Celltac ES MEK-7300",
+    file: "MEK-7300.pdf",
+  },
+  {
+    name: "Celltac G MEK-9100K",
+    file: "MEK-9100K.pdf",
+  },
+],
   },
 
   {
@@ -265,7 +285,7 @@ export default function Home() {
     </h3>
 
     <p className="text-xl text-gray-600 leading-10 mt-6">
-      With over 18 years of experience in healthcare diagnostics
+      With over 30 years of experience in healthcare diagnostics
       and medical equipment distribution, he has built strong
       partnerships with leading global healthcare manufacturers.
     </p>
@@ -300,131 +320,166 @@ export default function Home() {
 <section id="partners" className="py-24 px-6 bg-white">
   <div className="max-w-7xl mx-auto">
 
-    <section id="partners" className="py-24 px-6 bg-white">
-  <div className="max-w-7xl mx-auto">
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <p className="text-[#009933] font-semibold uppercase tracking-wider">
+        Our Partners
+      </p>
 
-```
-<div className="text-center mb-16">
-  <p className="text-[#009933] font-semibold uppercase tracking-wider">
-    Our Partners
-  </p>
+      <h2 className="text-4xl font-bold text-gray-800 mt-4">
+        Trusted Healthcare Technology Partners
+      </h2>
 
-  <h2 className="text-4xl font-bold text-gray-800 mt-4">
-    Trusted Healthcare Technology Partners
-  </h2>
-
-  <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
-    SSV Healthcare partners with globally recognized diagnostic
-    and healthcare technology companies to deliver reliable,
-    innovative, and high-performance medical solutions.
-  </p>
-</div>
-
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-  <div className="bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-    <div className="text-sm font-semibold text-[#009933] mb-3">
-      FRANCE
+      <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
+        SSV Healthcare partners with globally recognized diagnostic
+        and healthcare technology companies to deliver reliable,
+        innovative, and high-performance medical solutions.
+      </p>
     </div>
 
-    <h3 className="text-2xl font-bold text-gray-800 mb-3">
-      bioMérieux
-    </h3>
+    {/* Logo Strip */}
+    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 mb-16">
 
-    <p className="text-gray-600 leading-relaxed">
-      Microbiology and infectious disease diagnostic solutions.
-    </p>
-  </div>
+      <div className="bg-white rounded-2xl p-4 flex items-center justify-center h-28">
+        <Image
+          src="/logos/bioMérieux-logo.jpg"
+          alt="bioMérieux"
+          width={120}
+          height={60}
+          className="object-contain h-16 w-full"
+        />
+      </div>
 
-  <div className="bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-    <div className="text-sm font-semibold text-[#009933] mb-3">
-      USA
+      <div className="bg-white rounded-2xl p-4 flex items-center justify-center h-28">
+        <Image
+          src="/logos/Ortho-Clinical-Diagnostics-logo.jpg"
+          alt="Ortho Clinical Diagnostics"
+          width={120}
+          height={60}
+          className="object-contain h-16 w-full"
+        />
+      </div>
+
+      <div className="bg-white rounded-2xl p-4 flex items-center justify-center h-32">
+        <Image
+  src="/logos/nihon-kohden-logo.png"
+  alt="Nihon Kohden"
+  width={220}
+  height={100}
+  className="object-contain h-20 w-full"
+/>
+      </div>
+
+      <div className="bg-white rounded-2xl p-4 flex items-center justify-center h-28">
+        <Image
+          src="/logos/sysmex-logo.jpg"
+          alt="Sysmex"
+          width={120}
+          height={60}
+          className="object-contain h-16 w-full"
+        />
+      </div>
+
+      <div className="bg-white rounded-2xl p-4 flex items-center justify-center h-28">
+        <Image
+  src="/logos/radiometer-logo.jpg"
+  alt="Radiometer"
+  width={220}
+  height={100}
+  className="object-contain h-20 w-full"
+/>
+      </div>
+
+      <div className="bg-white rounded-2xl p-4 flex items-center justify-center h-28">
+        <Image
+          src="/logos/Bio-Rad_Laboratories_Logo.png"
+          alt="Bio-Rad"
+          width={120}
+          height={60}
+          className="object-contain h-16 w-full"
+        />
+      </div>
+
+      <div className="bg-white rounded-2xl p-4 flex items-center justify-center h-28">
+        <Image
+          src="/logos/abbott-logo.png"
+          alt="Abbott"
+          width={120}
+          height={60}
+          className="object-contain h-16 w-full"
+        />
+      </div>
+
     </div>
 
-    <h3 className="text-2xl font-bold text-gray-800 mb-3">
-      Ortho Clinical Diagnostics
-    </h3>
+    {/* Partner Cards */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    <p className="text-gray-600 leading-relaxed">
-      Clinical chemistry and immunodiagnostic systems.
-    </p>
-  </div>
+      <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm">
+        <div className="text-[#009933] font-semibold text-sm mb-2">FRANCE</div>
+        <h3 className="text-2xl font-bold text-gray-800 mb-3">bioMérieux</h3>
+        <p className="text-gray-600">
+          Microbiology and infectious disease diagnostic solutions.
+        </p>
+      </div>
 
-  <div className="bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-    <div className="text-sm font-semibold text-[#009933] mb-3">
-      JAPAN
+      <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm">
+        <div className="text-[#009933] font-semibold text-sm mb-2">USA</div>
+        <h3 className="text-2xl font-bold text-gray-800 mb-3">
+          Ortho Clinical Diagnostics
+        </h3>
+        <p className="text-gray-600">
+          Clinical chemistry and immunodiagnostic systems.
+        </p>
+      </div>
+
+      <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm">
+        <div className="text-[#009933] font-semibold text-sm mb-2">JAPAN</div>
+        <h3 className="text-2xl font-bold text-gray-800 mb-3">
+          Nihon Kohden
+        </h3>
+        <p className="text-gray-600">
+          Hematology analyzers and patient monitoring systems.
+        </p>
+      </div>
+
+      <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm">
+        <div className="text-[#009933] font-semibold text-sm mb-2">JAPAN</div>
+        <h3 className="text-2xl font-bold text-gray-800 mb-3">Sysmex</h3>
+        <p className="text-gray-600">
+          Advanced hematology and coagulation solutions.
+        </p>
+      </div>
+
+      <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm">
+        <div className="text-[#009933] font-semibold text-sm mb-2">USA</div>
+        <h3 className="text-2xl font-bold text-gray-800 mb-3">Radiometer</h3>
+        <p className="text-gray-600">
+          Blood gas and critical care testing systems.
+        </p>
+      </div>
+
+      <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm">
+        <div className="text-[#009933] font-semibold text-sm mb-2">USA</div>
+        <h3 className="text-2xl font-bold text-gray-800 mb-3">
+          Bio-Rad Laboratories
+        </h3>
+        <p className="text-gray-600">
+          Quality control and specialty diagnostic solutions.
+        </p>
+      </div>
+
+      <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm lg:col-span-3 text-center">
+        <div className="text-[#009933] font-semibold text-sm mb-2">USA</div>
+        <h3 className="text-2xl font-bold text-gray-800 mb-3">
+          Abbott Diagnostics
+        </h3>
+        <p className="text-gray-600">
+          Clinical diagnostics and laboratory testing solutions.
+        </p>
+      </div>
+
     </div>
-
-    <h3 className="text-2xl font-bold text-gray-800 mb-3">
-      Nihon Kohden
-    </h3>
-
-    <p className="text-gray-600 leading-relaxed">
-      Hematology analyzers and patient monitoring systems.
-    </p>
-  </div>
-
-  <div className="bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-    <div className="text-sm font-semibold text-[#009933] mb-3">
-      JAPAN
-    </div>
-
-    <h3 className="text-2xl font-bold text-gray-800 mb-3">
-      Sysmex
-    </h3>
-
-    <p className="text-gray-600 leading-relaxed">
-      Advanced hematology and coagulation solutions.
-    </p>
-  </div>
-
-  <div className="bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-    <div className="text-sm font-semibold text-[#009933] mb-3">
-      USA
-    </div>
-
-    <h3 className="text-2xl font-bold text-gray-800 mb-3">
-      Radiometer
-    </h3>
-
-    <p className="text-gray-600 leading-relaxed">
-      Blood gas and critical care testing systems.
-    </p>
-  </div>
-
-  <div className="bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-    <div className="text-sm font-semibold text-[#009933] mb-3">
-      USA
-    </div>
-
-    <h3 className="text-2xl font-bold text-gray-800 mb-3">
-      Bio-Rad Laboratories
-    </h3>
-
-    <p className="text-gray-600 leading-relaxed">
-      Quality control and specialty diagnostic solutions.
-    </p>
-  </div>
-
-  <div className="bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 lg:col-span-3 text-center">
-    <div className="text-sm font-semibold text-[#009933] mb-3">
-      USA
-    </div>
-
-    <h3 className="text-2xl font-bold text-gray-800 mb-3">
-      Abbott Diagnostics Medical Pvt Ltd
-    </h3>
-
-    <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
-      Clinical diagnostics and laboratory testing solutions.
-    </p>
-  </div>
-
-</div>
-```
-
-  </div>
-</section>
 
   </div>
 </section>
