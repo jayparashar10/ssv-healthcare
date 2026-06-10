@@ -33,6 +33,9 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+    verification: {
+    google: "DyavMt3t3_damtbZM_KF6GdE0xLKEKBZZNaGOP54Lbw",
+  },
 };
 
 export default function RootLayout({
