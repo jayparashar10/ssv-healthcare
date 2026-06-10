@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
-import { ShieldCheck, Activity, Truck, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { ShieldCheck, Activity, Truck, Menu, X } from "lucide-react";
 import { MessageCircle } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 export default function Home() {
+  const [searchTerm, setSearchTerm] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const productPartners = [
   {
@@ -498,9 +499,24 @@ export default function Home() {
       <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
         Explore healthcare and diagnostic solutions from our trusted partners.
       </p>
+      <div className="max-w-xl mx-auto mt-8">
+  <input
+    type="text"
+    placeholder="Search products..."
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+    className="w-full px-5 py-4 border border-gray-300 rounded-2xl text-gray-900 placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+  />
+</div>
     </div>
     <div className="space-y-10">
-  {productPartners.map((partner) => (
+  {productPartners
+  .filter((partner) =>
+    partner.products.some((product) =>
+      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  )
+  .map((partner) => (
     <div
       key={partner.company}
       className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all"
@@ -516,7 +532,11 @@ export default function Home() {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {partner.products.map((product) => (
+        {partner.products
+  .filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+  .map((product) => (
           <div
             key={product.name}
             className="border border-gray-200 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
