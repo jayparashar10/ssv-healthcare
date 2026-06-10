@@ -13,10 +13,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "SSV Healthcare",
-  description: "Delivering Advanced Healthcare Solutions",
+  title: "SSV Healthcare | Medical Equipment & Diagnostics",
+  description:
+    "SSV Healthcare is a trusted distributor of advanced healthcare, diagnostic, and laboratory equipment from leading global brands.",
+
+  keywords: [
+    "SSV Healthcare",
+    "Medical Equipment",
+    "Diagnostic Equipment",
+    "Laboratory Equipment",
+    "Healthcare Solutions",
+    "Abbott",
+    "Sysmex",
+    "Bio-Rad",
+    "Radiometer",
+    "Nihon Kohden",
+  ],
+
   icons: {
-    icon: "/logo.jpeg",
+    icon: "/favicon.ico",
   },
 };
 
