@@ -5,6 +5,47 @@ import { ShieldCheck, Activity, Truck, Menu, X } from "lucide-react";
 import { MessageCircle } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 export default function Home() {
+  const [showForm, setShowForm] = useState(false);
+const [selectedBrochure, setSelectedBrochure] = useState("");
+
+const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  phone: "",
+  organization: "",
+});
+const handleBrochureRequest = async () => {
+  if (
+  !formData.name ||
+  !formData.email ||
+  !formData.phone ||
+  !formData.organization
+) {
+  alert("Please fill all fields");
+  return;
+}
+  await fetch(
+    "https://script.google.com/macros/s/AKfycbw5qRGdpzGVkBl8iY38Og0jwcKKDY5355Ii8__pcbfTtcFZ7QqHX2WeJvzor19VgjDa/exec",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        ...formData,
+        product: selectedBrochure,
+      }),
+    }
+  );
+
+  window.open(selectedBrochure, "_blank");
+
+  setShowForm(false);
+
+  setFormData({
+    name: "",
+    email: "",
+    phone: "",
+    organization: "",
+  });
+};
   const [searchTerm, setSearchTerm] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const productPartners = [
@@ -545,14 +586,15 @@ export default function Home() {
               {product.name}
             </h4>
 
-            <a
-              href={`/brochures/${product.file}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex mt-4 text-[#009933] font-semibold hover:text-[#009933]"
-            >
-              View Brochure →
-            </a>
+            <button
+  onClick={() => {
+    setSelectedBrochure(`/brochures/${product.file}`);
+    setShowForm(true);
+  }}
+  className="inline-flex mt-4 text-[#009933] font-semibold cursor-pointer"
+>
+  View Brochure →
+</button>
           </div>
         ))}
       </div>
@@ -752,6 +794,73 @@ export default function Home() {
 >
   <FaWhatsapp size={30} />
 </a>
+{showForm && (
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+    <div className="bg-white rounded-3xl p-8 w-full max-w-md">
+
+      <h3 className="text-2xl font-bold text-gray-800 mb-6">
+        Download Brochure
+      </h3>
+
+      <div className="space-y-4">
+
+        <input
+          placeholder="Name"
+          value={formData.name}
+          onChange={(e) =>
+            setFormData({ ...formData, name: e.target.value })
+          }
+          className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-800 placeholder:text-gray-500"
+        />
+
+        <input
+          placeholder="Email"
+          value={formData.email}
+          onChange={(e) =>
+            setFormData({ ...formData, email: e.target.value })
+          }
+          className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-800 placeholder:text-gray-500"
+        />
+
+        <input
+          placeholder="Phone"
+          value={formData.phone}
+          onChange={(e) =>
+            setFormData({ ...formData, phone: e.target.value })
+          }
+          className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-800 placeholder:text-gray-500"
+        />
+
+        <input
+          placeholder="Organization / Hospital / Lab"
+          value={formData.organization}
+          onChange={(e) =>
+            setFormData({
+              ...formData,
+              organization: e.target.value,
+            })
+          }
+          className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-800 placeholder:text-gray-500"
+        />
+
+        <button
+          onClick={handleBrochureRequest}
+          className="w-full bg-[#009933] text-white py-3 rounded-xl font-semibold"
+        >
+          Submit & Download Brochure
+        </button>
+
+        <button
+          onClick={() => setShowForm(false)}
+          className="w-full border border-gray-300 py-3 rounded-xl text-gray-700 font-medium"
+        >
+          Cancel
+        </button>
+
+      </div>
+    </div>
+  </div>
+)}
    
     </main>
   );
